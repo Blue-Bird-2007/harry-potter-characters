@@ -1,0 +1,14 @@
+<div>
+    <ul class="nav nav-tabs">
+        <li role="presentation">
+          <a (click)="onChoose('all')" style="cursor: pointer;">All</a>
+        </li>
+        <li role="presentation">
+          <a (click)="onChoose('good')" style="cursor: pointer;">Good</a>
+        </li>
+        <li role="presentation">
+          <a (click)="onChoose('bad')" style="cursor: pointer;">Bad</a>
+        </li>
+      </ul>
+      <app-list [characters]="getCharacters()"></app-list>
+</div>
