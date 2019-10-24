@@ -1,0 +1,12 @@
+.navbar.navbar-expand {
+    background-color: lightgrey;
+    width: 100%;
+  }
+  
+  .nav-item.nav-link {
+    color: black;
+  }
+  
+  .nav-item.nav-link.active {
+    color: blue;
+  }

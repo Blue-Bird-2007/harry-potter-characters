@@ -7,9 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ListComponent implements OnInit {
   @Input() characters;
+
   constructor() { }
 
   ngOnInit() {
   }
-
 }

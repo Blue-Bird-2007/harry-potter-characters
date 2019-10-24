@@ -1,16 +1,24 @@
   
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { HarryPotterService } from '../harry-potter.service';
 
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css']
+  styleUrls: ['./item.component.css'],
 })
 export class ItemComponent implements OnInit {
-  character;
-  constructor() { }
+  @Input() character;
+  hpService: HarryPotterService;
+
+  constructor(hpService: HarryPotterService) { 
+    this.hpService = hpService;
+  }
 
   ngOnInit() {
   }
 
+  onAssign(house) {
+    this.hpService.onHouseChosen({ name: this.character.name, house: house });
+  }
 }

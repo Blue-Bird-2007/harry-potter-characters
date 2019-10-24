@@ -1,14 +1,40 @@
+<!-- <div>
+  <ul class="nav nav-tabs">
+    <li role="presentation" routerLinkActive="active">
+      <a routerLink="/characters/all">All</a>
+    </li>
+    <li role="presentation" routerLinkActive="active">
+      <a routerLink="/characters/gryffindor">Gryffindor</a>
+    </li>
+    <li role="presentation" routerLinkActive="active">
+      <a routerLink="/characters/slytherin">Slytherin</a>
+    </li>
+    <li role="presentation" routerLinkActive="active">
+      <a routerLink="/characters/ravenclaw">Ravenclaw</a>
+    </li>
+    <li role="presentation" routerLinkActive="active">
+      <a routerLink="/characters/hufflepuff">Hufflepuff</a>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
+</div> -->
 <div>
     <ul class="nav nav-tabs">
-        <li role="presentation">
-          <a (click)="onChoose('all')" style="cursor: pointer;">All</a>
+      <li role="presentation" [ngClass]="{active: chosenList === 'all'}">
+        <a (click)="onChoose('all')" style="cursor: pointer">All</a>
         </li>
-        <li role="presentation">
-          <a (click)="onChoose('good')" style="cursor: pointer;">Good</a>
+      <li role="presentation" [ngClass]="{active: chosenList === 'gryffindor'}">
+        <a (click)="onChoose('light')" style="cursor: pointer">Gryffindor</a>
         </li>
-        <li role="presentation">
-          <a (click)="onChoose('bad')" style="cursor: pointer;">Bad</a>
+      <li role="presentation" [ngClass]="{active: chosenList === 'slytherin'}">
+        <a (click)="onChoose('slytherin')" style="cursor: pointer">Slytherin</a>
         </li>
-      </ul>
-      <app-list [characters]="getCharacters()"></app-list>
-</div>
+        <li role="presentation" [ngClass]="{active: chosenList === 'ravenclaw'}">
+            <a (click)="onChoose('ravenclaw')" style="cursor: pointer">Ravenclaw</a>
+            </li>
+          <li role="presentation" [ngClass]="{active: chosenList === 'hufflepuff'}">
+            <a (click)="onChoose('hufflepuff')" style="cursor: pointer">Hufflepuff</a>
+            </li>
+    </ul>
+    <app-list [characters]="getCharacters()"></app-list>
+  </div>
