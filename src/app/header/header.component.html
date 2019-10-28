@@ -1,11 +1,21 @@
-<!-- <nav class="navbar navbar-expand">
+<nav class="navbar navbar-expand">
   <div class="navbar-nav">
-    <a class="nav-item nav-link" [ngClass]="{active: chosenList === 'all'}" (click)="onChoose('all')" style="cursor: pointer;">All</a>
-    <a class="nav-item nav-link" [ngClass]="{active: chosenList === 'good'}" (click)="onChoose('good')" style="cursor: pointer;">Good</a>
+    <div id="characterWrapper">
+      <li role="presentation"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <a id="allCharacters" routerLink="/">Harry Potter Characters</a>
+      </li>
+      <li role="presentation"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <a id="newCharacter" routerLink="/new-character">New Character</a>
+      </li>
+    </div>
   </div>
 </nav>
-<app-list></app-list> -->
-<ul>
+<!-- <app-list></app-list> -->
+<!-- <ul>
   <li role="presentation"
     routerLinkActive="active"
     [routerLinkActiveOptions]="{exact: true}">
@@ -14,4 +24,4 @@
   <li role="presentation" routerLinkActive="active">
     <a routerLink="/new-character">New Character</a>
   </li>
-</ul>
+</ul> -->

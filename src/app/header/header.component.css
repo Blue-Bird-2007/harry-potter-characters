@@ -1,12 +1,19 @@
 .navbar.navbar-expand {
-    background-color: lightgrey;
-    width: 100%;
-  }
+  background-color: lightgrey;
+  width: 100%;
+}
   
-  .nav-item.nav-link {
-    color: black;
-  }
+.nav-item.nav-link {
+  color: black;
+}
   
-  .nav-item.nav-link.active {
-    color: blue;
-  }
+.nav-item.nav-link.active {
+  color: blue;
+}
+
+#characterWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  padding-left: 16px;
+}

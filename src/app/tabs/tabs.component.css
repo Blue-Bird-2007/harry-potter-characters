@@ -1,0 +1,19 @@
+.nav-tabs {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+nav .nav-tabs .a {
+  border: 1px solid #dee2e6;
+}
+
+.nav {
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 0;
+  list-style: none;
+  width: 1088px;
+}
