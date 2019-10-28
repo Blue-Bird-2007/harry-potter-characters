@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { appRoutingModule } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { TabsComponent } from './tabs/tabs.component';
@@ -9,10 +10,11 @@ import { ItemComponent } from './item/item.component';
 import { HarryPotterService } from './harry-potter.service';
 import { LogService } from './log.service';
 import { HeaderComponent } from './header/header.component';
+import { CreateCharacterComponent } from './create-character/create-character.component';
 
 const routes = [
-  { path: 'characters', component: TabsComponent },
-  { path: 'new-character', component: HeaderComponent },
+  { path: '', component: TabsComponent },
+  { path: 'new-character', component: CreateCharacterComponent },
   { path: '**', redirectTo: '/' }
 ];
 @NgModule({
@@ -21,11 +23,13 @@ const routes = [
     TabsComponent,
     ListComponent,
     ItemComponent,
-    HeaderComponent
+    HeaderComponent,
+    CreateCharacterComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    appRoutingModule
   ],
   providers: [HarryPotterService, LogService],
   bootstrap: [AppComponent]
