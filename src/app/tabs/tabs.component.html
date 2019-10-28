@@ -1,30 +1,10 @@
-<!-- <div>
-  <ul class="nav nav-tabs">
-    <li role="presentation" routerLinkActive="active">
-      <a routerLink="/characters/all">All</a>
-    </li>
-    <li role="presentation" routerLinkActive="active">
-      <a routerLink="/characters/gryffindor">Gryffindor</a>
-    </li>
-    <li role="presentation" routerLinkActive="active">
-      <a routerLink="/characters/slytherin">Slytherin</a>
-    </li>
-    <li role="presentation" routerLinkActive="active">
-      <a routerLink="/characters/ravenclaw">Ravenclaw</a>
-    </li>
-    <li role="presentation" routerLinkActive="active">
-      <a routerLink="/characters/hufflepuff">Hufflepuff</a>
-    </li>
-  </ul>
-  <router-outlet></router-outlet>
-</div> -->
 <div>
     <ul class="nav nav-tabs">
       <li role="presentation" [ngClass]="{active: chosenList === 'all'}">
         <a (click)="onChoose('all')" style="cursor: pointer">All</a>
         </li>
       <li role="presentation" [ngClass]="{active: chosenList === 'gryffindor'}">
-        <a (click)="onChoose('light')" style="cursor: pointer">Gryffindor</a>
+        <a (click)="onChoose('gryffindor')" style="cursor: pointer">Gryffindor</a>
         </li>
       <li role="presentation" [ngClass]="{active: chosenList === 'slytherin'}">
         <a (click)="onChoose('slytherin')" style="cursor: pointer">Slytherin</a>

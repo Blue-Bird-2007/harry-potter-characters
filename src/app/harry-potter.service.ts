@@ -5,7 +5,25 @@ import { Injectable } from '@angular/core';
 export class HarryPotterService {
   private characters = [
     { name: 'Harry Potter', house: ''},
-    { name: 'Lord Voldemort', house: ''}
+    { name: 'Tom Riddle', house: ''},
+    { name: 'Ronald Weasley', house: ''},
+    { name: 'Hermione Granger', house: ''},
+    { name: 'Cho Chang', house: ''},
+    { name: 'Ginny Weasley', house: ''},
+    { name: 'Draco Malfoy', house: ''},
+    { name: 'Luna Lovegood', house: ''},
+    { name: 'Neville Longbottom', house: ''},
+    { name: 'Sirius Black', house: ''},
+    { name: 'Remus Lupin', house: ''},
+    { name: 'Bellatrix Lestrange', house: ''},
+    { name: 'Rubeus Hagrid', house: ''},
+    { name: 'Cedric Diggory', house: ''},
+    { name: 'Seamus Finnigan', house: ''},
+    { name: 'Parvati Patil', house: ''},
+    { name: 'Padma Patil', house: ''},
+    { name: 'Fenrir Greyback', house: ''},
+    { name: 'Severus Snape', house: ''},
+    { name: 'Minerva McGonagall', house: ''},
   ];
   private logService: LogService;
 
