@@ -8,3 +8,11 @@
   position: absolute;
   top: 64px;
 }
+
+.title-of-application {
+  position: relative;
+  margin-left: auto;
+  margin-top: 32px;
+  margin-left: 400px;
+  margin-bottom: 32px;
+}
