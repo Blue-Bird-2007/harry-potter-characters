@@ -24,3 +24,7 @@
   border: 1px solid black;
   background-color: lightskyblue;
 }
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}

@@ -14,6 +14,7 @@ export class HarryPotterService {
     { name: 'Luna Lovegood', house: ''},
     { name: 'Neville Longbottom', house: ''},
     { name: 'Sirius Black', house: ''},
+    { name: 'Susan Bones', house: ''},
     { name: 'Remus Lupin', house: ''},
     { name: 'Bellatrix Lestrange', house: ''},
     { name: 'Rubeus Hagrid', house: ''},
@@ -22,8 +23,7 @@ export class HarryPotterService {
     { name: 'Parvati Patil', house: ''},
     { name: 'Padma Patil', house: ''},
     { name: 'Fenrir Greyback', house: ''},
-    { name: 'Severus Snape', house: ''},
-    { name: 'Minerva McGonagall', house: ''},
+    { name: 'Ernie MacMillan', house: ''}
   ];
   private logService: LogService;
 
@@ -43,9 +43,20 @@ export class HarryPotterService {
   onHouseChosen(charInfo) {
     const pos = this.characters.findIndex((char) => {
       return char.name === charInfo.name;
-    })
+    });
     this.characters[pos].house = charInfo.house;
     this.logService.writeLog(`Changed house of ${charInfo.name}, new house is ${charInfo.house}`);
+  }
+
+  addCharacter(name, house) {
+    const pos = this.characters.findIndex((char) => {
+      return char.name === name;
+    });
+    if (pos !== -1) {
+      return;
+    }
+    const newCharacter = { name: name, house: house };
+    this.characters.push(newCharacter);
   }
   
 }

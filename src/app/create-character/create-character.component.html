@@ -1,19 +1,28 @@
-<form>
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
   <div class="form-group">
     <div class="label-for-input">
       <label for="name">Character Name</label>
-      <input type="text" id="name" name="name" class="form-control">
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="form-control"
+        autocomplete="off"
+        ngModel
+        required
+        #nameCtrl="ngModel">
+      <span class="help-block" *ngIf="nameCtrl.invalid && nameCtrl.touched">Please enter a name!</span>
     </div>
   <div class="form-group">
     <div class="label-for-input">
       <label for="house">Assign House</label>
-      <select id="house" name="house" class="form-control">
+      <select id="house" name="house" class="form-control" ngModel>
         <option *ngFor="let option of availableHouses" [value]="option.value">{{ option.display }}</option>
       </select>
     </div>
   </div>
   </div>
   <div id="btnAddCharacter">
-    <button class="btn-add-character" type="submit">Add Character</button>
+    <button class="btn-add-character" type="submit" [disabled]="form.invalid">Add Character</button>
   </div>
 </form>

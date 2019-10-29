@@ -3,8 +3,13 @@
   border-radius: 4px;
 }
 
-nav .nav-tabs .a {
+nav .nav-tabs .li {
   border: 1px solid #dee2e6;
+}
+
+nav .nav-tabs .li.active {
+  border: 1px solid #dee2e6;
+  color: blue;
 }
 
 .nav {

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router';
 import { appRoutingModule } from './app.routing';
 
@@ -29,7 +30,8 @@ const routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    appRoutingModule
+    appRoutingModule,
+    FormsModule
   ],
   providers: [HarryPotterService, LogService],
   bootstrap: [AppComponent]
