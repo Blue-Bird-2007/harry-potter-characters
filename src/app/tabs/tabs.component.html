@@ -1,20 +1,20 @@
 <div>
-    <ul class="nav nav-tabs">
-      <li role="presentation" [ngClass]="{active: chosenList === 'all'}">
-        <a (click)="onChoose('all')" style="cursor: pointer">All</a>
-        </li>
-      <li role="presentation" [ngClass]="{active: chosenList === 'gryffindor'}">
-        <a (click)="onChoose('gryffindor')" style="cursor: pointer">Gryffindor</a>
-        </li>
-      <li role="presentation" [ngClass]="{active: chosenList === 'slytherin'}">
-        <a (click)="onChoose('slytherin')" style="cursor: pointer">Slytherin</a>
-        </li>
-        <li role="presentation" [ngClass]="{active: chosenList === 'ravenclaw'}">
-            <a (click)="onChoose('ravenclaw')" style="cursor: pointer">Ravenclaw</a>
-            </li>
-          <li role="presentation" [ngClass]="{active: chosenList === 'hufflepuff'}">
-            <a (click)="onChoose('hufflepuff')" style="cursor: pointer">Hufflepuff</a>
-            </li>
-    </ul>
-    <app-list [characters]="getCharacters()"></app-list>
-  </div>
+  <ul class="nav nav-tabs">
+    <li role="presentation">
+      <a routerLink="/characters/all">All</a>
+    </li>
+    <li role="presentation">
+      <a routerLink="/characters/gryffindor">Gryffindor</a>
+    </li>
+    <li role="presentation">
+      <a routerLink="/characters/slytherin">Slytherin</a>
+    </li>
+    <li role="presentation">
+      <a routerLink="/characters/ravenclaw">Ravenclaw</a>
+    </li>
+    <li role="presentation">
+      <a routerLink="/characters/hufflepuff">Hufflepuff</a>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>

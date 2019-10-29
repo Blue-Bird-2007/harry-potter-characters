@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router';
-import { appRoutingModule } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { TabsComponent } from './tabs/tabs.component';
@@ -14,10 +13,14 @@ import { HeaderComponent } from './header/header.component';
 import { CreateCharacterComponent } from './create-character/create-character.component';
 
 const routes = [
-  { path: '', component: TabsComponent },
+  { path: 'characters', component: TabsComponent, children: [
+    { path: '', redirectTo: 'all', pathMatch: 'full' },
+    { path: ':house', component: ListComponent }
+  ] },
   { path: 'new-character', component: CreateCharacterComponent },
-  { path: '**', redirectTo: '/' }
+  { path: '**', redirectTo: '/characters' }
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +33,6 @@ const routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    appRoutingModule,
     FormsModule
   ],
   providers: [HarryPotterService, LogService],
