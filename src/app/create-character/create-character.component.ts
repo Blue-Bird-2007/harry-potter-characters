@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HarryPotterService } from '../harry-potter.service';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-create-character',
@@ -16,7 +18,7 @@ export class CreateCharacterComponent implements OnInit {
   ];
   hpService: HarryPotterService;
 
-  constructor(hpService: HarryPotterService) {
+  constructor(hpService: HarryPotterService, private authService: AuthService, private router: Router) {
     this.hpService = hpService;
   }
 
@@ -29,6 +31,11 @@ export class CreateCharacterComponent implements OnInit {
     }
     console.log(submittedForm.value);
     this.hpService.addCharacter(submittedForm.value.name, submittedForm.value.house);
+  }
+
+  logout(){
+    this.authService.logout();
+    this.router.navigateByUrl('/login');
   }
 
 }

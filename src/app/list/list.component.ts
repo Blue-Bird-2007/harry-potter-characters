@@ -18,7 +18,7 @@ export class ListComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.hpService.fetchCharacters();
+    // this.hpService.fetchCharacters();
     this.activatedRoute.params.subscribe(
       (params) => {
         this.characters = this.hpService.getCharacters(params.house);

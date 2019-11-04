@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -13,14 +13,17 @@ import { LogService } from './log.service';
 import { HeaderComponent } from './header/header.component';
 import { CreateCharacterComponent } from './create-character/create-character.component';
 import { AppConfig } from './app.config';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
 
 const routes = [
   { path: 'characters', component: TabsComponent, children: [
     { path: '', redirectTo: 'all', pathMatch: 'full' },
-    { path: ':house', component: ListComponent }
-  ] },
-  { path: 'new-character', component: CreateCharacterComponent },
-  { path: '**', redirectTo: '/characters' }
+    { path: ':house', component: ListComponent, }
+  ], canActivate: [AuthGuard] },
+  { path: 'new-character', component: CreateCharacterComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({
@@ -30,12 +33,14 @@ const routes = [
     ListComponent,
     ItemComponent,
     HeaderComponent,
-    CreateCharacterComponent
+    CreateCharacterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [HarryPotterService, LogService, AppConfig],

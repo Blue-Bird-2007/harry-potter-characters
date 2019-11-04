@@ -1,0 +1,39 @@
+<div class="login-container">
+  <h3>Login Page</h3>
+</div>
+
+<form (ngSubmit)="login()" #form="ngForm">
+  <div class="form-group">
+    <div class="label-for-input">
+      <label for="email">Email</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        class="form-control"
+        autocomplete="off"
+        ngModel
+        required
+        #emailCtrl="ngModel">
+      <span class="help-block" *ngIf="emailCtrl.invalid && emailCtrl.touched">Please enter your email address!</span>
+    </div>
+  <div class="form-group">
+    <div class="label-for-input">
+      <label for="password">Password</label>
+      <input
+        type="text"
+        id="password"
+        name="password"
+        class="form-control"
+        autocomplete="off"
+        ngModel
+        required
+        #passwordCtrl="ngModel">
+      <span class="help-block" *ngIf="passwordCtrl.invalid && passwordCtrl.touched">Please enter your password!</span>
+      </div>
+    </div>
+  </div>
+  <div id="btnLogin">
+    <button class="btn-login" type="submit" [disabled]="form.invalid">Login</button>
+  </div>
+</form>

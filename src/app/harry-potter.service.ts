@@ -41,22 +41,22 @@ export class HarryPotterService {
     this.appConfig = appConfig;
   }
 
-  fetchCharacters() {
-    let url: string;
-    let frog;
-    const subject = new Subject<any[]>();
-    this.appConfig.getConfig().subscribe((res) => {
-      url = res.body.apiServer.harryPotterUrl;
-      this.http.get(url).subscribe((response: Response) => {
-        frog = response;
-        this.characters = frog.map(tadpole => tadpole.name);
-        console.log(this.characters);
-        subject.next(this.characters);
-      });
-    });
-    console.log(subject.asObservable());
-    return subject.asObservable();
-  }
+  // fetchCharacters() {
+  //   let url: string;
+  //   let frog;
+  //   const subject = new Subject<any[]>();
+  //   this.appConfig.getConfig().subscribe((res) => {
+  //     url = res.body.apiServer.harryPotterUrl;
+  //     this.http.get(url).subscribe((response: Response) => {
+  //       frog = response;
+  //       this.characters = frog.map(tadpole => tadpole.name);
+  //       console.log(this.characters);
+  //       subject.next(this.characters);
+  //     });
+  //   });
+  //   console.log(subject.asObservable());
+  //   return subject.asObservable();
+  // }
 
   getCharacters(chosenList) {
     if (chosenList === 'all') {
