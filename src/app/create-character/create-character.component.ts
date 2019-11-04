@@ -9,10 +9,10 @@ import { HarryPotterService } from '../harry-potter.service';
 export class CreateCharacterComponent implements OnInit {
   availableHouses = [
     { display: 'None', value: '' },
-    { display: 'Gryffindor', value: 'gryffindor' },
-    { display: 'Slytherin', value: 'slytherin' },
-    { display: 'Ravenclaw', value: 'ravenclaw' },
-    { display: 'Hufflepuff', value: 'hufflepuff' }
+    { display: 'Gryffindor', value: 'Gryffindor' },
+    { display: 'Slytherin', value: 'Slytherin' },
+    { display: 'Ravenclaw', value: 'Ravenclaw' },
+    { display: 'Hufflepuff', value: 'Hufflepuff' }
   ];
   hpService: HarryPotterService;
 

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TabsComponent } from './tabs/tabs.component';
@@ -11,6 +12,7 @@ import { HarryPotterService } from './harry-potter.service';
 import { LogService } from './log.service';
 import { HeaderComponent } from './header/header.component';
 import { CreateCharacterComponent } from './create-character/create-character.component';
+import { AppConfig } from './app.config';
 
 const routes = [
   { path: 'characters', component: TabsComponent, children: [
@@ -33,9 +35,10 @@ const routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [HarryPotterService, LogService],
+  providers: [HarryPotterService, LogService, AppConfig],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
