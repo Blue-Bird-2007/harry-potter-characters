@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HarryPotterService } from '../harry-potter.service';
+import { HarryPotterService } from '../services/harry-potter.service';
 
 @Component({
   selector: 'app-list',

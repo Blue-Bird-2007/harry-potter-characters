@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HarryPotterService } from '../harry-potter.service';
+import { HarryPotterService } from '../services/harry-potter.service';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-create-character',

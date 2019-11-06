@@ -1,6 +1,6 @@
   
 import { Component, OnInit, Input } from '@angular/core';
-import { HarryPotterService } from '../harry-potter.service';
+import { HarryPotterService } from '../services/harry-potter.service';
 
 @Component({
   selector: 'app-item',

@@ -1,7 +1,7 @@
 import { LogService } from './log.service';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Character } from './character';
+import { Character } from '../models/character';
 
 @Injectable()
 export class HarryPotterService {
