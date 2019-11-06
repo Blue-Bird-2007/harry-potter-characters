@@ -15,7 +15,6 @@ export class AuthService {
 
   public isLoggedIn(){
     return localStorage.getItem('ACCESS_TOKEN') !== null;
-
   }
 
   public logout(){

@@ -12,7 +12,6 @@ import { HarryPotterService } from './harry-potter.service';
 import { LogService } from './log.service';
 import { HeaderComponent } from './header/header.component';
 import { CreateCharacterComponent } from './create-character/create-character.component';
-import { AppConfig } from './app.config';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
 
@@ -43,7 +42,7 @@ const routes = [
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [HarryPotterService, LogService, AppConfig],
+  providers: [HarryPotterService, LogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
